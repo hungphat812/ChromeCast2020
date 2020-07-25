@@ -8,7 +8,7 @@ const StreamType = {
   DASH: 'application/dash+xml',
   HLS: 'application/x-mpegurl'
 }
-const TEST_STREAM_TYPE = StreamType.DASH
+const TEST_STREAM_TYPE = StreamType.HLS
 
 // Debug Logger
 const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
