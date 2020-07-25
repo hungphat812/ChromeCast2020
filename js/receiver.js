@@ -2,7 +2,8 @@ const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
 
 //Media Sample API Values
-const SAMPLE_URL = "https://storage.googleapis.com/cpe-sample-media/content.json";
+//const SAMPLE_URL = "https://storage.googleapis.com/cpe-sample-media/content.json";
+const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Json/master/cinejoy_cotent.json";
 const StreamType = {
   DASH: 'application/dash+xml',
   HLS: 'application/x-mpegurl'
@@ -107,7 +108,7 @@ playerManager.setMessageInterceptor(
   });
 
 // Optimizing for smart displays
-const touchControls = cast.framework.ui.Controls.getInstance();
+/* const touchControls = cast.framework.ui.Controls.getInstance();
 const playerData = new cast.framework.ui.PlayerData();
 const playerDataBinder = new cast.framework.ui.PlayerDataBinder(playerData);
 
@@ -150,6 +151,6 @@ playerDataBinder.addEventListener(
       cast.framework.ui.ControlsSlot.SLOT_PRIMARY_1,
       cast.framework.ui.ControlsButton.SEEK_BACKWARD_30
     );
-  });
+  }); */
 
 context.start();
