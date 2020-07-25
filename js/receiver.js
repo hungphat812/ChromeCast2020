@@ -9,7 +9,7 @@ const StreamType = {
   HLS: 'application/x-mpegurl',
   IMG: 'image/*'
 }
-const TEST_STREAM_TYPE = StreamType.DASH
+const TEST_STREAM_TYPE = StreamType.IMG
 
 // Debug Logger
 const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
