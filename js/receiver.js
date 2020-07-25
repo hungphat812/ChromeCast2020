@@ -2,8 +2,8 @@ const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
 
 //Media Sample API Values
-const SAMPLE_URL = "https://storage.googleapis.com/cpe-sample-media/content.json";
-//const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Json/master/cinejoy_cotent.json";
+//const SAMPLE_URL = "https://storage.googleapis.com/cpe-sample-media/content.json";
+const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Json/master/cinejoy_cotent.json";
 const StreamType = {
   DASH: 'application/dash+xml',
   HLS: 'application/x-mpegurl'
