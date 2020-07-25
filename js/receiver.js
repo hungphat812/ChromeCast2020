@@ -78,7 +78,7 @@ playerManager.setMessageInterceptor(
             reject();
           } else {
             
-            var TEST_STREAM_TYPE = item.streamType
+            var TEST_STREAM_TYPE = item.streamType;
             
             // Adjusting request to make requested content playable
             request.media.contentType = TEST_STREAM_TYPE;
