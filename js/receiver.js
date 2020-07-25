@@ -6,7 +6,8 @@ const playerManager = context.getPlayerManager();
 const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Json/master/cinejoy_cotent.json";
 const StreamType = {
   DASH: 'application/dash+xml',
-  HLS: 'application/x-mpegurl'
+  HLS: 'application/x-mpegurl',
+  IMG: 'image/*'
 }
 const TEST_STREAM_TYPE = StreamType.DASH
 
@@ -80,7 +81,12 @@ playerManager.setMessageInterceptor(
             request.media.contentType = TEST_STREAM_TYPE;
 
             // Configure player to parse DASH content
-            if(TEST_STREAM_TYPE == StreamType.DASH) {
+            if(TEST_STREAM_TYPE == StreamType.IMG) {
+              request.media.contentUrl = item.stream.img;
+            }
+            
+            // Configure player to parse DASH content
+            else if(TEST_STREAM_TYPE == StreamType.DASH) {
               request.media.contentUrl = item.stream.dash;
             }
 
@@ -108,7 +114,7 @@ playerManager.setMessageInterceptor(
   });
 
 // Optimizing for smart displays
-const touchControls = cast.framework.ui.Controls.getInstance();
+/* const touchControls = cast.framework.ui.Controls.getInstance();
 const playerData = new cast.framework.ui.PlayerData();
 const playerDataBinder = new cast.framework.ui.PlayerDataBinder(playerData);
 
@@ -151,6 +157,6 @@ playerDataBinder.addEventListener(
       cast.framework.ui.ControlsSlot.SLOT_PRIMARY_1,
       cast.framework.ui.ControlsButton.SEEK_BACKWARD_30
     );
-  });
+  }); */
 
 context.start();
