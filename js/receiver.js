@@ -9,7 +9,7 @@ const StreamType = {
   HLS: 'application/x-mpegurl',
   IMG: 'image/*'
 }
-const TEST_STREAM_TYPE = StreamType.IMG
+//const TEST_STREAM_TYPE = StreamType.IMG
 
 // Debug Logger
 const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
@@ -77,6 +77,9 @@ playerManager.setMessageInterceptor(
             castDebugLogger.error(LOG_TAG, 'Content not found');
             reject();
           } else {
+            
+            var TEST_STREAM_TYPE = item.streamType
+            
             // Adjusting request to make requested content playable
             request.media.contentType = TEST_STREAM_TYPE;
 
