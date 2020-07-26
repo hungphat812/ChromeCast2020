@@ -7,6 +7,7 @@ const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Js
 const StreamType = {
   DASH: 'application/dash+xml',
   HLS: 'application/x-mpegurl',
+  SMOOTH: 'application/vnd.ms-sstr+xml',
   IMG: 'image/*'
 }
 //const TEST_STREAM_TYPE = StreamType.IMG
@@ -92,7 +93,12 @@ playerManager.setMessageInterceptor(
             else if(TEST_STREAM_TYPE == StreamType.DASH) {
               request.media.contentUrl = item.stream.dash;
             }
-
+            
+            // Configure player to parse SMOOTH STREAM content
+            else if(TEST_STREAM_TYPE == StreamType.SMOOTH) {
+              request.media.contentUrl = item.stream.smooth;
+            }
+            
             // Configure player to parse HLS content
             else if(TEST_STREAM_TYPE == StreamType.HLS) {
               request.media.contentUrl = item.stream.hls
