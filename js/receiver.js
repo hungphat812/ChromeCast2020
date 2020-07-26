@@ -7,6 +7,7 @@ const SAMPLE_URL = "https://raw.githubusercontent.com/hungphat812/CineJoy2020_Js
 const StreamType = {
   DASH: 'application/dash+xml',
   HLS: 'application/x-mpegurl',
+  PHIMMOI: 'application/vnd.apple.mpegurl',
   IMG: 'image/*'
 }
 //const TEST_STREAM_TYPE = StreamType.IMG
@@ -94,7 +95,7 @@ playerManager.setMessageInterceptor(
             }
 
             // Configure player to parse HLS content
-            else if(TEST_STREAM_TYPE == StreamType.HLS) {
+            else if(TEST_STREAM_TYPE == StreamType.HLS || TEST_STREAM_TYPE == StreamType.PHIMMOI) {
               request.media.contentUrl = item.stream.hls
               request.media.hlsSegmentFormat = cast.framework.messages.HlsSegmentFormat.FMP4;
               request.media.hlsVideoSegmentFormat = cast.framework.messages.HlsVideoSegmentFormat.FMP4;
