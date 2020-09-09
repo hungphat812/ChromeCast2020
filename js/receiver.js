@@ -10,6 +10,7 @@ const StreamType = {
   HLS: 'application/x-mpegurl',
   SMOOTH: 'application/vnd.ms-sstr+xml',
   MP4: 'video/mp4',
+  MP3: 'audio/mpeg',
   IMG: 'image/*'
 }
 //const TEST_STREAM_TYPE = StreamType.IMG
@@ -89,6 +90,11 @@ playerManager.setMessageInterceptor(
             // Configure player to parse DASH content
             if(TEST_STREAM_TYPE == StreamType.IMG) {
               request.media.contentUrl = item.stream.img;
+            }
+            
+            // Configure player to parse DASH content
+            else if(TEST_STREAM_TYPE == StreamType.MP3) {
+              request.media.contentUrl = item.stream.mp3;
             }
             
             // Configure player to parse DASH content
